@@ -39,12 +39,12 @@ const App = () => {
           Search Countries <input value={searchCountry} onChange={handleCountryChange}></input>
         </form>
         <section className="results">
-          <Results filteredCountries={filteredCountries}></Results>
           {filteredCountries.length === 1 ? (
-            <CountryStats country={filteredCountries}></CountryStats>
+            <CountryStats country={filteredCountries[0]}></CountryStats>
           ) : (
-            ""
+            <Results filteredCountries={filteredCountries}></Results>
           )}
+
           {/* IDEA {selectedCountry.length ? (
             <Results countries={countries} searchCountry={searchCountry}></Results>
           ) : (
