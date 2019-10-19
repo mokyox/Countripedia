@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import axios from "axios";
+import styled from "styled-components";
 import Results from "./components/Results";
 import CountryStats from "./components/CountryStats";
 
@@ -36,7 +37,8 @@ const App = () => {
       <header className="App-header">
         <h1>Countripedia</h1>
         <form>
-          Search Countries <input value={searchCountry} onChange={handleCountryChange}></input>
+          Search Countries
+          <StyledInput value={searchCountry} onChange={handleCountryChange}></StyledInput>
         </form>
         <section className="results">
           {filteredCountries.length === 1 ? (
@@ -44,16 +46,17 @@ const App = () => {
           ) : (
             <Results filteredCountries={filteredCountries}></Results>
           )}
-
-          {/* IDEA {selectedCountry.length ? (
-            <Results countries={countries} searchCountry={searchCountry}></Results>
-          ) : (
-            <SelectedCountry data={selectedCountry} />
-          )} */}
+          {/* {<Results filteredCountries={filteredCountries}></Results>} */}
         </section>
       </header>
     </div>
   );
 };
+
+const StyledInput = styled.input`
+  position: relative;
+  border-radius: 1000rem;
+  padding: 3px;
+`;
 
 export default App;
