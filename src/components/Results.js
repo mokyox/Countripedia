@@ -51,8 +51,8 @@ const StyledResult = styled.div`
 `;
 
 const StyledButton = styled.button`
-  background: #342d28;
-  border: 1px solid #342d28;
+  background: #ac5610;
+  border: 1px solid #ac5610;
   color: white;
   padding: 0.3rem 0.5rem;
   border-radius: 5px;
