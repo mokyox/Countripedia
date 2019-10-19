@@ -7,6 +7,7 @@ const CountryStats = ({ country }) => {
   return (
     <CountryCard>
       <h1>{country.name}</h1>
+      <img src={country.flag} alt="flag"></img>
       <p>Population: {new Intl.NumberFormat().format(country.population)}</p>
       <h4>Languages</h4>
       <ul>
@@ -14,7 +15,6 @@ const CountryStats = ({ country }) => {
           <li key={language.name}>{language.name}</li>
         ))}
       </ul>
-      <img src={country.flag} alt="flag"></img>
     </CountryCard>
   );
 };
@@ -27,7 +27,12 @@ const CountryCard = styled.div`
   justify-content: center;
   text-align: center;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 1rem;
+  &p,
+  h4,
+  li {
+    margin: 0.2rem;
+  }
 `;
 
 CountryStats.propTypes = {

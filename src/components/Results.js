@@ -6,7 +6,7 @@ import styled from "styled-components";
 const Results = ({ filteredCountries }) => {
   const [selectedCountry, setSelectedCountry] = useState("");
   const [isClicked, setIsClicked] = useState(false);
-  console.log(selectedCountry, "is the selectedCountry");
+  console.log(selectedCountry.name, "is the selectedCountry");
   if (filteredCountries.length > 10) {
     return <p>Too many matches, please specify another filter.</p>;
   }
@@ -37,9 +37,9 @@ const Results = ({ filteredCountries }) => {
 };
 
 const StyledResults = styled.div`
-  /* border: solid 1px green; */
+  /* border: solid 3px green; */
   text-align: center;
-  margin: 5px 0;
+  margin: 1rem 0;
 `;
 
 const StyledResult = styled.div`
@@ -51,8 +51,8 @@ const StyledResult = styled.div`
 `;
 
 const StyledButton = styled.button`
-  background: ${props => (props.primary ? "#25d366" : "#e76c67")};
-  border: ${props => (props.primary ? "1px solid #25d366" : "1px solid #e76c67")};
+  background: #342d28;
+  border: 1px solid #342d28;
   color: white;
   padding: 0.3rem 0.5rem;
   border-radius: 5px;
@@ -66,6 +66,7 @@ const StyledButton = styled.button`
   &:focus {
     outline: none;
   }
+  margin: 0 20px;
 `;
 
 Results.propTypes = {

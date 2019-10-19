@@ -37,7 +37,7 @@ const App = () => {
       <header className="App-header">
         <h1>Countripedia</h1>
         <form>
-          Search Countries
+          <StyledLabel>Search Countries</StyledLabel>
           <StyledInput value={searchCountry} onChange={handleCountryChange}></StyledInput>
         </form>
         <section className="results">
@@ -46,17 +46,23 @@ const App = () => {
           ) : (
             <Results filteredCountries={filteredCountries}></Results>
           )}
-          {/* {<Results filteredCountries={filteredCountries}></Results>} */}
         </section>
       </header>
     </div>
   );
 };
 
+const StyledLabel = styled.p`
+  margin: 0.4rem;
+`;
+
 const StyledInput = styled.input`
+  display: block;
   position: relative;
   border-radius: 1000rem;
-  padding: 3px;
+  padding: 5px;
+  margin: 0.1rem 0.5rem;
+  max-width: 250px;
 `;
 
 export default App;
