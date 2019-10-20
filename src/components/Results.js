@@ -37,10 +37,11 @@ const Results = ({ filteredCountries }) => {
 };
 
 const StyledResults = styled.div`
-  /* border: solid 3px green; */
+  border: solid 3px green;
   margin: 1rem auto;
-  max-width: 480px;
+  max-width: 640px;
   text-align: center;
+  padding: 1rem;
 `;
 
 const StyledResult = styled.div`
@@ -60,6 +61,7 @@ const StyledButton = styled.button`
   text-decoration: none;
   font-weight: 700;
   transition: all 0.1s ease-in-out;
+  margin: 5px 1rem;
   &:hover {
     transform: scale(1.1);
   }
@@ -67,7 +69,6 @@ const StyledButton = styled.button`
   &:focus {
     outline: none;
   }
-  margin: 0 20px;
 `;
 
 Results.propTypes = {
