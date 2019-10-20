@@ -22,11 +22,11 @@ const CountryStats = ({ country }) => {
 };
 
 const CountryCard = styled.div`
-  /* border: solid 1px red; */
+  border: solid 1px red;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  max-width: 480px;
+  max-width: 640px;
   margin: 0 auto;
   padding: 1rem;
   p,
