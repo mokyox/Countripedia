@@ -17,7 +17,7 @@ ul {
 
 li {
   font-size: calc(10px + 1.5vmin);
-  padding: 5px 0px;
+
   flex: 1 0 10%;
 }
 
