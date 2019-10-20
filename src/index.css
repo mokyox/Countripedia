@@ -4,6 +4,7 @@ body {
   font-family: "Open Sans", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
 }
 
 h1,
@@ -13,4 +14,5 @@ h4,
 h5,
 h6 {
   font-family: "Roboto", sans-serif;
+  line-height: 1.2;
 }
