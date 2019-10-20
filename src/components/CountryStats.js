@@ -8,7 +8,9 @@ const CountryStats = ({ country }) => {
     <CountryCard>
       <h1>{country.name}</h1>
       <img src={country.flag} alt="flag"></img>
-      <p>Population: {new Intl.NumberFormat().format(country.population)}</p>
+      <p>
+        <strong>Population</strong>: {new Intl.NumberFormat().format(country.population)}
+      </p>
       <h4>Languages</h4>
       <ul>
         {country.languages.map(language => (
