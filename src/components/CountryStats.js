@@ -23,16 +23,17 @@ const CountryCard = styled.div`
   /* border: solid 1px red; */
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
   max-width: 480px;
-  text-align: center;
   margin: 0 auto;
   padding: 1rem;
-  &p,
-  h4,
-  li {
-    margin: 0.2rem;
+  p,
+  h4 {
+    margin: 0.6rem 0;
+  }
+  h1,
+  img {
+    align-self: center;
   }
 `;
 

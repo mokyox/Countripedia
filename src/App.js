@@ -62,7 +62,7 @@ const StyledInput = styled.input`
   border-radius: 1000rem;
   padding: 5px;
   margin: 0.75rem auto;
-  max-width: 250px;
+  max-width: 360px;
 `;
 
 export default App;

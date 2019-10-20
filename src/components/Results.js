@@ -40,6 +40,7 @@ const StyledResults = styled.div`
   /* border: solid 3px green; */
   margin: 1rem auto;
   max-width: 480px;
+  text-align: center;
 `;
 
 const StyledResult = styled.div`
