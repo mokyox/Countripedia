@@ -38,8 +38,8 @@ const Results = ({ filteredCountries }) => {
 
 const StyledResults = styled.div`
   /* border: solid 3px green; */
-  text-align: center;
-  margin: 1rem 0;
+  margin: 1rem auto;
+  max-width: 480px;
 `;
 
 const StyledResult = styled.div`

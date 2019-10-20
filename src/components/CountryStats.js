@@ -25,6 +25,7 @@ const CountryCard = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  max-width: 480px;
   text-align: center;
   margin: 0 auto;
   padding: 1rem;
