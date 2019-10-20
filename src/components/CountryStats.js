@@ -30,6 +30,7 @@ const CountryCard = styled.div`
   p,
   h4 {
     margin: 0.6rem 0;
+    padding: 0.5rem 0;
   }
   h1,
   img {
