@@ -8,7 +8,7 @@ const Results = ({ filteredCountries }) => {
   const [isClicked, setIsClicked] = useState(false);
   console.log(selectedCountry.name, "is the selectedCountry");
   if (filteredCountries.length > 10) {
-    return <p>Too many matches, please specify another filter.</p>;
+    return <p> Please specify filter further.</p>;
   }
   return (
     <>

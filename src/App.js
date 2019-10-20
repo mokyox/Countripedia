@@ -61,7 +61,7 @@ const StyledInput = styled.input`
   position: relative;
   border-radius: 1000rem;
   padding: 5px;
-  margin: 0.1rem 0.5rem;
+  margin: 0.75rem auto;
   max-width: 250px;
 `;
 
