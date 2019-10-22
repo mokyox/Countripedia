@@ -22,7 +22,7 @@ const CountryStats = ({ country }) => {
 };
 
 const CountryCard = styled.div`
-  border: solid 1px red;
+  /* border: solid 1px red; */
   display: flex;
   flex-direction: column;
   justify-content: center;

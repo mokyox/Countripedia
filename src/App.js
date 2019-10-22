@@ -8,6 +8,7 @@ import CountryStats from "./components/CountryStats";
 const App = () => {
   const [countries, setCountries] = useState([]);
   const [searchCountry, setSearchCountry] = useState("");
+  const [isLoaded, setIsLoaded] = useState(false);
 
   //Filter through all the countries based on text from input
   const filteredCountries =
@@ -16,12 +17,12 @@ const App = () => {
       : countries.filter(
           country => country.name.toLowerCase().indexOf(searchCountry.toLowerCase()) !== -1
         );
-  console.log(filteredCountries);
 
   //Get data from Countries API
   useEffect(() => {
     axios.get("https://restcountries.eu/rest/v2/all").then(response => {
       setCountries(response.data);
+      setIsLoaded(true);
     });
   }, []);
 
@@ -44,7 +45,7 @@ const App = () => {
           {filteredCountries.length === 1 ? (
             <CountryStats country={filteredCountries[0]}></CountryStats>
           ) : (
-            <Results filteredCountries={filteredCountries}></Results>
+            <Results filteredCountries={filteredCountries} isLoaded={isLoaded}></Results>
           )}
         </section>
       </header>

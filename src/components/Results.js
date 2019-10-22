@@ -3,12 +3,14 @@ import CountryStats from "./CountryStats";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 
-const Results = ({ filteredCountries }) => {
+const Results = ({ filteredCountries, isLoaded }) => {
   const [selectedCountry, setSelectedCountry] = useState("");
   const [isClicked, setIsClicked] = useState(false);
-  console.log(selectedCountry.name, "is the selectedCountry");
   if (filteredCountries.length > 10) {
     return <p> Please specify filter further.</p>;
+  }
+  if (filteredCountries.length === 0 && isLoaded) {
+    return <p>No countries found.</p>;
   }
   return (
     <>
@@ -37,7 +39,7 @@ const Results = ({ filteredCountries }) => {
 };
 
 const StyledResults = styled.div`
-  border: solid 3px green;
+  /* border: solid 3px green; */
   margin: 1rem auto;
   max-width: 640px;
   text-align: center;
@@ -49,7 +51,7 @@ const StyledResult = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  flex-wrap: nowrap;
+  /* flex-wrap: nowrap; */
 `;
 
 const StyledButton = styled.button`
