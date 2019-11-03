@@ -18,7 +18,6 @@ const App = () => {
       : countries.filter(
           country => country.name.toLowerCase().indexOf(searchCountry.toLowerCase()) !== -1
         );
-  console.log(filteredCountries, "filtered countries");
 
   //Get data from Countries API
   useEffect(() => {
@@ -35,7 +34,6 @@ const App = () => {
   //Log values of country every time input value changes
   const handleCountryChange = event => {
     setSearchCountry(event.target.value);
-    // console.log(event.target.value);
   };
 
   return (
@@ -50,7 +48,6 @@ const App = () => {
           {filteredCountries.length === 1 ? (
             <CountryStats
               country={filteredCountries[0]}
-              isLoaded={isLoaded}
               setSelectedCountry={setSelectedCountry}
               selectedCountry={selectedCountry}
             ></CountryStats>
