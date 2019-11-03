@@ -1,0 +1,6 @@
+[[redirects]]
+  from = "http://api.weatherstack.com"
+  to = "https://api.weatherstack.com"
+  status = 200
+  force = true
+  signed = "REACT_APP_API_KEY"
