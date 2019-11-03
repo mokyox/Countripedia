@@ -74,6 +74,7 @@ const StyledButton = styled.button`
   font-weight: 700;
   transition: all 0.1s ease-in-out;
   margin: 5px 1rem;
+  cursor: pointer;
   &:hover {
     transform: scale(1.1);
   }
