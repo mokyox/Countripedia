@@ -1,7 +1,0 @@
-[[redirects]]
-  from = "http://api.weatherstack.com"
-  to = "https://api.weatherstack.com"
-  status = 200
-  force = true
-  headers = {X-From = "Netlify"}
-  
