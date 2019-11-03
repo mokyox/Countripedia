@@ -3,9 +3,11 @@ import CountryStats from "./CountryStats";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 
-const Results = ({ filteredCountries, isLoaded }) => {
-  const [selectedCountry, setSelectedCountry] = useState("");
+const Results = ({ filteredCountries, isLoaded, setSelectedCountry, selectedCountry }) => {
   const [isClicked, setIsClicked] = useState(false);
+
+  //Get API weather data after country API data from parent component is called
+
   if (filteredCountries.length > 10) {
     return <p> Please specify filter further.</p>;
   }
@@ -33,7 +35,16 @@ const Results = ({ filteredCountries, isLoaded }) => {
           ))}
         </ul>
       </StyledResults>
-      {selectedCountry ? <CountryStats country={selectedCountry}></CountryStats> : ""}
+      {selectedCountry ? (
+        <CountryStats
+          country={selectedCountry}
+          selectedCountry={selectedCountry}
+          setSelectedCountry={setSelectedCountry}
+          isLoaded={isLoaded}
+        ></CountryStats>
+      ) : (
+        ""
+      )}
     </>
   );
 };
@@ -51,7 +62,6 @@ const StyledResult = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  /* flex-wrap: nowrap; */
 `;
 
 const StyledButton = styled.button`

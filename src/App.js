@@ -9,6 +9,7 @@ const App = () => {
   const [countries, setCountries] = useState([]);
   const [searchCountry, setSearchCountry] = useState("");
   const [isLoaded, setIsLoaded] = useState(false);
+  const [selectedCountry, setSelectedCountry] = useState("");
 
   //Filter through all the countries based on text from input
   const filteredCountries =
@@ -17,20 +18,24 @@ const App = () => {
       : countries.filter(
           country => country.name.toLowerCase().indexOf(searchCountry.toLowerCase()) !== -1
         );
+  console.log(filteredCountries, "filtered countries");
 
   //Get data from Countries API
   useEffect(() => {
-    axios.get("https://restcountries.eu/rest/v2/all").then(response => {
-      setCountries(response.data);
-      setIsLoaded(true);
-    });
+    async function fetchCountriesAPIData() {
+      let url = "https://restcountries.eu/rest/v2/all";
+      await axios.get(url).then(response => {
+        setCountries(response.data);
+        setIsLoaded(true);
+      });
+    }
+    fetchCountriesAPIData();
   }, []);
 
   //Log values of country every time input value changes
   const handleCountryChange = event => {
-    // IDEA: setSelectedCountry([]) Add state that keeps track which country is selected
     setSearchCountry(event.target.value);
-    console.log(event.target.value);
+    // console.log(event.target.value);
   };
 
   return (
@@ -43,9 +48,19 @@ const App = () => {
         </form>
         <section className="results">
           {filteredCountries.length === 1 ? (
-            <CountryStats country={filteredCountries[0]}></CountryStats>
+            <CountryStats
+              country={filteredCountries[0]}
+              isLoaded={isLoaded}
+              setSelectedCountry={setSelectedCountry}
+              selectedCountry={selectedCountry}
+            ></CountryStats>
           ) : (
-            <Results filteredCountries={filteredCountries} isLoaded={isLoaded}></Results>
+            <Results
+              setSelectedCountry={setSelectedCountry}
+              filteredCountries={filteredCountries}
+              isLoaded={isLoaded}
+              selectedCountry={selectedCountry}
+            ></Results>
           )}
         </section>
       </header>
