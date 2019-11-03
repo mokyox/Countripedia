@@ -16,10 +16,7 @@ const CountryStats = ({ country, setSelectedCountry, selectedCountry }) => {
   //setSelectedCountry if there is only 1 result
   if (country) {
     setSelectedCountry(country);
-    console.log(selectedCountry, "SELECTEDCOUNTRY");
   }
-
-  console.log(selectedCountry);
 
   //Get weather data from API
   useEffect(() => {
