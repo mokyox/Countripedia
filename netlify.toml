@@ -3,4 +3,4 @@
   to = "https://api.weatherstack.com"
   status = 200
   force = true
-  signed = "REACT_APP_API_KEY"
+  headers = {X-From = "Netlify"}
