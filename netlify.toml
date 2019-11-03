@@ -4,4 +4,4 @@
   status = 200
   force = true
   headers = {X-From = "Netlify"}
-  signed = "REACT_APP_API_KEY"
+  
