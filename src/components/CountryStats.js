@@ -2,9 +2,14 @@ import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import axios from "axios";
+import getIcon from "./icons";
 
 const CountryStats = ({ country, setSelectedCountry, selectedCountry }) => {
   const [weather, setWeather] = useState([]);
+  const [icon, setIcon] = useState("");
+  const [temperature, setTemperature] = useState("");
+  const [wind, setWind] = useState("");
+  const [description, setDescription] = useState("");
   //API Key
   const API_KEY = process.env.REACT_APP_API_KEY;
 
@@ -19,11 +24,14 @@ const CountryStats = ({ country, setSelectedCountry, selectedCountry }) => {
   //Get weather data from API
   useEffect(() => {
     async function fetchWeatherAPIData() {
-      let url = `http://api.weatherstack.com/current?access_key=${API_KEY}&query=${selectedCountry.capital}`;
+      let url = `https://api.openweathermap.org/data/2.5/weather?q=${selectedCountry.capital}&appid=${API_KEY}&units=metric`;
       await axios
         .get(url)
         .then(response => {
-          setWeather(response.data.current);
+          setIcon(response.data.weather[0].icon);
+          setTemperature(response.data.main.temp);
+          setWind(response.data.wind.speed);
+          setDescription(response.data.weather[0].description);
         })
         .catch(err => {
           if (err) {
@@ -33,8 +41,6 @@ const CountryStats = ({ country, setSelectedCountry, selectedCountry }) => {
     }
     fetchWeatherAPIData();
   }, [API_KEY, selectedCountry.capital, setWeather]);
-
-  console.log(weather);
 
   return (
     <>
@@ -52,16 +58,10 @@ const CountryStats = ({ country, setSelectedCountry, selectedCountry }) => {
             ))}
           </ul>
           <h4>Weather in {country.capital}</h4>
-          {/* Map over weather array and populate card with all the information */}
-          <p>Temperature: {weather.temperature}°C</p>
-          <img
-            style={{ width: "50px", height: "50px", alignSelf: "flex-start" }}
-            src={weather.weather_icons}
-            alt=" current weather icon"
-          ></img>
-          <p>
-            Wind: {weather.wind_speed} kph direction {weather.wind_dir}{" "}
-          </p>
+          <WeatherIcon className={getIcon(icon)}></WeatherIcon>
+          <span>{description.charAt(0).toUpperCase() + description.slice(1)}</span>
+          <span>Temperature: {Math.floor(temperature)}°C </span>
+          <span>Wind: {Math.floor(wind)} kph</span>
         </CountryCard>
       )}
     </>
@@ -85,6 +85,11 @@ const CountryCard = styled.div`
   img {
     align-self: center;
   }
+`;
+
+const WeatherIcon = styled.div`
+  font-size: 75px;
+  margin: 1rem;
 `;
 
 CountryStats.propTypes = {
