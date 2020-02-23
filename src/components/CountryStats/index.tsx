@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from "react";
-import PropTypes from "prop-types";
 import styled from "styled-components";
 import axios from "axios";
-import getIcon from "./icons";
+import getIcon from "../icons";
+import { Props } from "./types";
 
-const CountryStats = ({ country, setSelectedCountry, selectedCountry }) => {
+const CountryStats: React.FC<Props> = ({
+  country,
+  setSelectedCountry,
+  selectedCountry
+}) => {
   const [weather, setWeather] = useState([]);
   const [icon, setIcon] = useState("");
   const [temperature, setTemperature] = useState("");
@@ -32,7 +36,7 @@ const CountryStats = ({ country, setSelectedCountry, selectedCountry }) => {
         })
         .catch(err => {
           if (err) {
-            console.log(err, "This is an error.");
+            console.log(err, "Something went wrong. Please try again.");
           }
         });
     }
@@ -46,7 +50,8 @@ const CountryStats = ({ country, setSelectedCountry, selectedCountry }) => {
           <h1>{country.name}</h1>
           <img src={country.flag} alt="flag"></img>
           <p>
-            <strong>Population</strong>: {new Intl.NumberFormat().format(country.population)}
+            <strong>Population</strong>:{" "}
+            {new Intl.NumberFormat().format(country.population)}
           </p>
           <h4>Languages</h4>
           <ul>
@@ -56,7 +61,9 @@ const CountryStats = ({ country, setSelectedCountry, selectedCountry }) => {
           </ul>
           <h4>Weather in {country.capital}</h4>
           <WeatherIcon className={getIcon(icon)}></WeatherIcon>
-          <span>{description.charAt(0).toUpperCase() + description.slice(1)}</span>
+          <span>
+            {description.charAt(0).toUpperCase() + description.slice(1)}
+          </span>
           <span>Temperature: {Math.floor(temperature)}°C </span>
           <span>Wind: {Math.floor(wind)} kph</span>
         </CountryCard>
@@ -88,9 +95,5 @@ const WeatherIcon = styled.div`
   font-size: 75px;
   margin: 1rem;
 `;
-
-CountryStats.propTypes = {
-  country: PropTypes.object
-};
 
 export default CountryStats;

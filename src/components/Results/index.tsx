@@ -1,9 +1,14 @@
 import React, { useState } from "react";
-import CountryStats from "./CountryStats";
-import PropTypes from "prop-types";
+import CountryStats from "../CountryStats";
+import { Props } from "./types";
 import styled from "styled-components";
 
-const Results = ({ filteredCountries, isLoaded, setSelectedCountry, selectedCountry }) => {
+const Results: React.FC<Props> = ({
+  filteredCountries,
+  isLoaded,
+  setSelectedCountry,
+  selectedCountry
+}) => {
   const [isClicked, setIsClicked] = useState(false);
 
   //Get API weather data after country API data from parent component is called
@@ -19,6 +24,8 @@ const Results = ({ filteredCountries, isLoaded, setSelectedCountry, selectedCoun
       <StyledResults>
         <ul>
           {filteredCountries.map(country => (
+            //TODO: Add property type
+
             <React.Fragment key={country.name}>
               <StyledResult>
                 <li>{country.name}</li>
@@ -83,9 +90,5 @@ const StyledButton = styled.button`
     outline: none;
   }
 `;
-
-Results.propTypes = {
-  filteredCountries: PropTypes.array
-};
 
 export default Results;
