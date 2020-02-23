@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import axios from "axios";
 import styled from "styled-components";
-import Results from "./components/Results/Results";
-import CountryStats from "./components/Results/CountryStats/CountryStats";
+import Results from "./components/Results/";
+import CountryStats from "./components/CountryStats/";
 
 const App: React.FC = () => {
   const [countries, setCountries] = useState<any[]>([]);
@@ -53,11 +53,7 @@ const App: React.FC = () => {
         </form>
         <section className="results">
           {filteredCountries.length === 1 ? (
-            <CountryStats
-              country={filteredCountries[0]}
-              setSelectedCountry={setSelectedCountry}
-              selectedCountry={selectedCountry}
-            ></CountryStats>
+            <CountryStats></CountryStats>
           ) : (
             <Results
               setSelectedCountry={setSelectedCountry}
