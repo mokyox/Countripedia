@@ -1,8 +1,9 @@
 // @ts-nocheck
+
 import React, { useState } from "react";
 import CountryStats from "../CountryStats";
 import { Props } from "./types";
-import styled from "styled-components";
+import { StyledButton, StyledResult, StyledResults } from "./styles";
 
 const Results: React.FC<Props> = ({
   filteredCountries,
@@ -25,8 +26,6 @@ const Results: React.FC<Props> = ({
       <StyledResults>
         <ul>
           {filteredCountries.map(country => (
-            //TODO: Add property type
-
             <React.Fragment key={country.name}>
               <StyledResult>
                 <li>{country.name}</li>
@@ -56,40 +55,5 @@ const Results: React.FC<Props> = ({
     </>
   );
 };
-
-const StyledResults = styled.div`
-  /* border: solid 3px green; */
-  margin: 1rem auto;
-  max-width: 640px;
-  text-align: center;
-  padding: 1rem;
-`;
-
-const StyledResult = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-`;
-
-const StyledButton = styled.button`
-  background: #ac5610;
-  border: 1px solid #ac5610;
-  color: white;
-  padding: 0.3rem 0.5rem;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: 700;
-  transition: all 0.1s ease-in-out;
-  margin: 5px 1rem;
-  cursor: pointer;
-  &:hover {
-    transform: scale(1.1);
-  }
-  &:hover,
-  &:focus {
-    outline: none;
-  }
-`;
 
 export default Results;
