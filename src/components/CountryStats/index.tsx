@@ -1,3 +1,4 @@
+// ts-nocheck
 import React, { useState, useEffect } from "react";
 import { CountryCard, WeatherIcon } from "./styles";
 import axios from "axios";

@@ -1,4 +1,3 @@
-// @ts-nocheck
 const getIcon = (weatherIcon: string) => {
   const iconsMap = {
     "01d": "wi wi-day-sunny",
