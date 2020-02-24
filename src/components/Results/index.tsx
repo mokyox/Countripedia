@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { useState } from "react";
 import CountryStats from "../CountryStats";
 import { Props } from "./types";

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import axios from "axios";
@@ -17,11 +18,12 @@ const CountryStats: React.FC<Props> = ({
   //API Key
   const API_KEY = process.env.REACT_APP_API_KEY;
 
+  console.log(selectedCountry, "selected country");
+
   //setSelectedCountry if there is only 1 result
   if (country) {
     setSelectedCountry(country);
   }
-
   //Get weather data from API
   useEffect(() => {
     async function fetchWeatherAPIData() {
