@@ -1,3 +1,9 @@
+function hasKey<O>(obj: O, key: keyof any): key is keyof O {
+  return key in obj;
+}
+
+//TypeScript has to check whether the key exists before it can actually access the object.
+
 const getIcon = (weatherIcon: string) => {
   const iconsMap = {
     "01d": "wi wi-day-sunny",
@@ -19,7 +25,12 @@ const getIcon = (weatherIcon: string) => {
     "13n": "wi wi-night-snow",
     "50n": "wi wi-night-fog"
   };
-  return iconsMap[weatherIcon];
+  if (hasKey(iconsMap, weatherIcon)) {
+    return iconsMap[weatherIcon];
+  }
 };
+
+//Need to understand exactly why this works.
+// https://dev.to/kingdaro/indexing-objects-in-typescript-1cgi
 
 export default getIcon;

@@ -1,8 +1,8 @@
-// ts-nocheck
+// @ts-nocheck
 import React, { useState, useEffect } from "react";
 import { CountryCard, WeatherIcon } from "./styles";
 import axios from "axios";
-import getIcon from "../icons";
+import getIcon from "./icons";
 import { Props } from "./types";
 
 const CountryStats: React.FC<Props> = ({
@@ -15,7 +15,7 @@ const CountryStats: React.FC<Props> = ({
   const [temperature, setTemperature] = useState(0);
   const [wind, setWind] = useState(0);
   const [description, setDescription] = useState("");
-  //API Key
+
   const API_KEY = process.env.REACT_APP_API_KEY;
 
   //setSelectedCountry if there is only 1 result
