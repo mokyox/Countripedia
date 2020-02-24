@@ -1,4 +1,3 @@
-// @ts-nocheck
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import axios from "axios";
@@ -12,8 +11,8 @@ const CountryStats: React.FC<Props> = ({
 }) => {
   const [weather, setWeather] = useState([]);
   const [icon, setIcon] = useState("");
-  const [temperature, setTemperature] = useState("");
-  const [wind, setWind] = useState("");
+  const [temperature, setTemperature] = useState(0);
+  const [wind, setWind] = useState(0);
   const [description, setDescription] = useState("");
   //API Key
   const API_KEY = process.env.REACT_APP_API_KEY;
