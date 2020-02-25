@@ -4,7 +4,7 @@ import axios from "axios";
 import styled from "styled-components";
 import Results from "./components/Results/";
 import CountryStats from "./components/CountryStats/";
-import "./styles/index.css";
+import GlobalStyle from "./styles/index";
 
 const App: React.FC = () => {
   const [countries, setCountries] = useState<any[]>([]);
@@ -42,30 +42,33 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Countripedia</h1>
-        <form>
-          <StyledLabel>Search Countries</StyledLabel>
-          <StyledInput
-            value={searchCountry}
-            onChange={handleCountryChange}
-          ></StyledInput>
-        </form>
-        <section className="results">
-          {filteredCountries.length === 1 ? (
-            <CountryStats></CountryStats>
-          ) : (
-            <Results
-              setSelectedCountry={setSelectedCountry}
-              filteredCountries={filteredCountries}
-              isLoaded={isLoaded}
-              selectedCountry={selectedCountry}
-            ></Results>
-          )}
-        </section>
-      </header>
-    </div>
+    <>
+      <GlobalStyle></GlobalStyle>
+      <div className="App">
+        <header className="App-header">
+          <h1>Countripedia</h1>
+          <form>
+            <StyledLabel>Search Countries</StyledLabel>
+            <StyledInput
+              value={searchCountry}
+              onChange={handleCountryChange}
+            ></StyledInput>
+          </form>
+          <section className="results">
+            {filteredCountries.length === 1 ? (
+              <CountryStats></CountryStats>
+            ) : (
+              <Results
+                setSelectedCountry={setSelectedCountry}
+                filteredCountries={filteredCountries}
+                isLoaded={isLoaded}
+                selectedCountry={selectedCountry}
+              ></Results>
+            )}
+          </section>
+        </header>
+      </div>
+    </>
   );
 };
 

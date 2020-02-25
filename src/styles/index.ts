@@ -1,3 +1,7 @@
+import { createGlobalStyle } from "styled-components";
+
+const GlobalStyle = createGlobalStyle`
+
 html {
   box-sizing: border-box;
 }
@@ -9,6 +13,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.6;
+  
 }
 
 h1,
@@ -48,3 +53,6 @@ img {
   max-width: 240px;
   height: auto;
 }
+`;
+
+export default GlobalStyle;
