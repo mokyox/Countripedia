@@ -5,11 +5,7 @@ import axios from "axios";
 import getIcon from "./icons";
 import { Props } from "./types";
 
-const CountryStats: React.FC<Props> = ({
-  country,
-  setSelectedCountry,
-  selectedCountry
-}) => {
+const CountryStats: React.FC<Props> = ({ selectedCountry }) => {
   const [weather, setWeather] = useState([]);
   const [icon, setIcon] = useState("");
   const [temperature, setTemperature] = useState(0);

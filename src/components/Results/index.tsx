@@ -43,11 +43,7 @@ const Results: React.FC<Props> = ({
         </ul>
       </StyledResults>
       {selectedCountry ? (
-        <CountryStats
-          selectedCountry={selectedCountry}
-          setSelectedCountry={setSelectedCountry}
-          IsCountryLoaded={IsCountryLoaded}
-        ></CountryStats>
+        <CountryStats selectedCountry={selectedCountry}></CountryStats>
       ) : (
         ""
       )}
