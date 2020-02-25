@@ -1,10 +1,10 @@
 // @ts-nocheck
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import styled from "styled-components";
+import { StyledInput, StyledLabel } from "./styles/styles";
 import Results from "./components/Results/";
 import CountryStats from "./components/CountryStats/";
-import GlobalStyle from "./styles/index";
+import GlobalStyle from "./styles/global/index";
 
 const App: React.FC = () => {
   const [countries, setCountries] = useState<any[]>([]);
@@ -73,18 +73,5 @@ const App: React.FC = () => {
     </>
   );
 };
-
-const StyledLabel = styled.p`
-  margin: 0.4rem;
-`;
-
-const StyledInput = styled.input`
-  display: block;
-  position: relative;
-  border-radius: 1000rem;
-  padding: 5px;
-  margin: 0.75rem auto;
-  max-width: 360px;
-`;
 
 export default App;
