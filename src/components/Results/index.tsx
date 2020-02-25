@@ -44,7 +44,6 @@ const Results: React.FC<Props> = ({
       </StyledResults>
       {selectedCountry ? (
         <CountryStats
-          country={selectedCountry}
           selectedCountry={selectedCountry}
           setSelectedCountry={setSelectedCountry}
           IsCountryLoaded={IsCountryLoaded}

@@ -56,7 +56,9 @@ const App: React.FC = () => {
           </form>
           <section className="results">
             {filteredCountries.length === 1 ? (
-              <CountryStats></CountryStats>
+              <CountryStats
+                selectedCountry={filteredCountries[0]}
+              ></CountryStats>
             ) : (
               <Results
                 setSelectedCountry={setSelectedCountry}

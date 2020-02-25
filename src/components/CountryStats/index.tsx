@@ -18,10 +18,6 @@ const CountryStats: React.FC<Props> = ({
 
   const API_KEY = process.env.REACT_APP_API_KEY;
 
-  //set selectedCountry if there is only 1 result
-  if (country) {
-    setSelectedCountry(country);
-  }
   //Get weather data from API
   useEffect(() => {
     async function fetchWeatherAPIData() {
@@ -47,19 +43,19 @@ const CountryStats: React.FC<Props> = ({
     <>
       {weather && (
         <CountryCard>
-          <h1>{country.name}</h1>
-          <img src={country.flag} alt="flag"></img>
+          <h1>{selectedCountry.name}</h1>
+          <img src={selectedCountry.flag} alt="flag"></img>
           <p>
             <strong>Population</strong>:
-            {new Intl.NumberFormat().format(country.population)}
+            {new Intl.NumberFormat().format(selectedCountry.population)}
           </p>
           <h4>Languages</h4>
           <ul>
-            {country.languages.map(language => (
+            {selectedCountry.languages.map(language => (
               <li key={language.name}>{language.name}</li>
             ))}
           </ul>
-          <h4>Weather in {country.capital}</h4>
+          <h4>Weather in {selectedCountry.capital}</h4>
           <WeatherIcon className={getIcon(icon)}></WeatherIcon>
           <span>
             {description.charAt(0).toUpperCase() + description.slice(1)}
