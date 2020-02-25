@@ -1,5 +1,4 @@
 // @ts-nocheck
-
 import React, { useState } from "react";
 import CountryStats from "../CountryStats";
 import { Props } from "./types";
@@ -18,7 +17,7 @@ const Results: React.FC<Props> = ({
   if (filteredCountries.length > 10) {
     return <p> Please specify filter further.</p>;
   }
-  if (filteredCountries.length === 0 && IsCountryLoaded) {
+  if (!filteredCountries.length && IsCountryLoaded) {
     return <p>No countries found.</p>;
   }
   return (
