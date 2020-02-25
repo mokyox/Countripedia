@@ -1,10 +1,10 @@
 // @ts-nocheck
 import React, { useState, useEffect } from "react";
-import "./App.css";
 import axios from "axios";
 import styled from "styled-components";
 import Results from "./components/Results/";
 import CountryStats from "./components/CountryStats/";
+import "./styles/index.css";
 
 const App: React.FC = () => {
   const [countries, setCountries] = useState<any[]>([]);
@@ -25,7 +25,7 @@ const App: React.FC = () => {
   }, []);
 
   //Filter through all the countries based on text from input
-  const filteredCountries: string[] =
+  const filteredCountries =
     searchCountry === ""
       ? countries
       : countries.filter(
