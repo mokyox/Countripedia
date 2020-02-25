@@ -4,6 +4,6 @@ export interface Props {
     name: string;
     capital: string;
     flag: string;
-    population?: number;
+    population: number;
   };
 }
