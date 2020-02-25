@@ -9,7 +9,7 @@ import GlobalStyle from "./styles/index";
 const App: React.FC = () => {
   const [countries, setCountries] = useState<any[]>([]);
   const [searchCountry, setSearchCountry] = useState("");
-  const [isLoaded, setIsLoaded] = useState(false);
+  const [IsCountryLoaded, setIsCountryLoaded] = useState(false);
   const [selectedCountry, setSelectedCountry] = useState("");
 
   //Get data from Countries API
@@ -18,7 +18,7 @@ const App: React.FC = () => {
       let url = "https://restcountries.eu/rest/v2/all";
       await axios.get(url).then(response => {
         setCountries(response.data);
-        setIsLoaded(true);
+        setIsCountryLoaded(true);
       });
     }
     fetchCountriesAPIData();
@@ -61,7 +61,7 @@ const App: React.FC = () => {
               <Results
                 setSelectedCountry={setSelectedCountry}
                 filteredCountries={filteredCountries}
-                isLoaded={isLoaded}
+                IsCountryLoaded={IsCountryLoaded}
                 selectedCountry={selectedCountry}
               ></Results>
             )}

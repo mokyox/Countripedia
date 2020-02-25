@@ -41,7 +41,7 @@ const CountryStats: React.FC<Props> = ({
         });
     }
     fetchWeatherAPIData();
-  }, [API_KEY, selectedCountry.capital, setWeather]);
+  }, [API_KEY, setWeather]);
 
   return (
     <>

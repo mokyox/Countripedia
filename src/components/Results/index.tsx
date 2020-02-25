@@ -7,7 +7,7 @@ import { StyledButton, StyledResult, StyledResults } from "./styles";
 
 const Results: React.FC<Props> = ({
   filteredCountries,
-  isLoaded,
+  IsCountryLoaded,
   setSelectedCountry,
   selectedCountry
 }) => {
@@ -18,7 +18,7 @@ const Results: React.FC<Props> = ({
   if (filteredCountries.length > 10) {
     return <p> Please specify filter further.</p>;
   }
-  if (filteredCountries.length === 0 && isLoaded) {
+  if (filteredCountries.length === 0 && IsCountryLoaded) {
     return <p>No countries found.</p>;
   }
   return (
@@ -47,7 +47,7 @@ const Results: React.FC<Props> = ({
           country={selectedCountry}
           selectedCountry={selectedCountry}
           setSelectedCountry={setSelectedCountry}
-          isLoaded={isLoaded}
+          IsCountryLoaded={IsCountryLoaded}
         ></CountryStats>
       ) : (
         ""

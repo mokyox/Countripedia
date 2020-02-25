@@ -1,6 +1,6 @@
 export interface Props {
   filteredCountries: [{ name: string }];
-  isLoaded: boolean;
+  IsCountryLoaded: boolean;
   setSelectedCountry: React.Dispatch<React.SetStateAction<string>>;
   selectedCountry: string;
 }
