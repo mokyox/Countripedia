@@ -18,7 +18,7 @@ const CountryStats: React.FC<Props> = ({
 
   const API_KEY = process.env.REACT_APP_API_KEY;
 
-  //setSelectedCountry if there is only 1 result
+  //set selectedCountry if there is only 1 result
   if (country) {
     setSelectedCountry(country);
   }
@@ -41,7 +41,7 @@ const CountryStats: React.FC<Props> = ({
         });
     }
     fetchWeatherAPIData();
-  }, [API_KEY, setWeather]);
+  }, [API_KEY, selectedCountry.capital, setWeather]);
 
   return (
     <>
@@ -50,7 +50,7 @@ const CountryStats: React.FC<Props> = ({
           <h1>{country.name}</h1>
           <img src={country.flag} alt="flag"></img>
           <p>
-            <strong>Population</strong>:{" "}
+            <strong>Population</strong>:
             {new Intl.NumberFormat().format(country.population)}
           </p>
           <h4>Languages</h4>

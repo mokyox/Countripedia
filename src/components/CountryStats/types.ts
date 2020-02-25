@@ -1,8 +1,8 @@
 export interface Props {
   setSelectedCountry?: React.Dispatch<React.SetStateAction<string>>;
-  selectedCountry?: {
+  selectedCountry: {
     name?: string;
-    capital?: string;
+    capital: string;
     flag?: string;
     population?: number;
   };
