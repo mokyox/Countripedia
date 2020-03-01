@@ -42,7 +42,7 @@ const CountryStats: React.FC<Props> = ({ selectedCountry }) => {
           <h1>{selectedCountry.name}</h1>
           <img src={selectedCountry.flag} alt="flag"></img>
           <p>
-            <strong>Population</strong>:{""}
+            <strong>Population </strong>:
             {new Intl.NumberFormat().format(selectedCountry.population)}
           </p>
           <h4>Languages</h4>
