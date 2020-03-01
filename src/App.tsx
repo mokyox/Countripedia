@@ -59,15 +59,16 @@ const App: React.FC = () => {
               <CountryStats
                 selectedCountry={filteredCountries[0]}
               ></CountryStats>
-            ) : (
-              <Results
-                setSelectedCountry={setSelectedCountry}
-                filteredCountries={filteredCountries}
-                IsCountryLoaded={IsCountryLoaded}
-                selectedCountry={selectedCountry}
-              ></Results>
-            )}
+            ) : null}
           </section>
+          {filteredCountries.length > 1 ? (
+            <Results
+              setSelectedCountry={setSelectedCountry}
+              filteredCountries={filteredCountries}
+              IsCountryLoaded={IsCountryLoaded}
+              selectedCountry={selectedCountry}
+            ></Results>
+          ) : null}
         </header>
       </div>
     </>
