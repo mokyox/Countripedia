@@ -1,9 +1,8 @@
 import styled from "styled-components";
 
 export const StyledResults = styled.div`
-  /* border: solid 3px green; */
-  margin: 1rem auto;
-  max-width: 640px;
+  margin: 0.5 rem auto;
+  max-width: 480px;
   text-align: center;
   padding: 1rem;
 `;
