@@ -1,7 +1,4 @@
-export interface ResultsProps {
-  filteredCountries: [{ name: string }];
-  IsCountryLoaded: boolean;
-  setSelectedCountry: React.Dispatch<React.SetStateAction<{ name: string }>>;
+export interface CountryStatsProps {
   selectedCountry: {
     name: string;
     capital: string;
@@ -10,11 +7,8 @@ export interface ResultsProps {
   };
 }
 
-export interface CountryStatsProps {
-  selectedCountry: {
-    name: string;
-    capital: string;
-    flag: string;
-    population: number;
-  };
+export interface ResultsProps extends CountryStatsProps {
+  filteredCountries: [{ name: string }];
+  IsCountryLoaded: boolean;
+  setSelectedCountry: React.Dispatch<React.SetStateAction<{ name: string }>>;
 }
