@@ -3,9 +3,9 @@ import React, { useState, useEffect } from "react";
 import { CountryCard, WeatherIcon } from "./styles";
 import axios from "axios";
 import getIcon from "./icons";
-import { Props } from "./types";
+import { CountryStatsProps } from "../../types/types";
 
-const CountryStats: React.FC<Props> = ({ selectedCountry }) => {
+const CountryStats: React.FC<CountryStatsProps> = ({ selectedCountry }) => {
   const [weather, setWeather] = useState([]);
   const [icon, setIcon] = useState("");
   const [temperature, setTemperature] = useState(0);

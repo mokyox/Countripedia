@@ -1,10 +1,10 @@
 // @ts-nocheck
 import React, { useState } from "react";
 import CountryStats from "../CountryStats";
-import { Props } from "./types";
+import { ResultsProps } from "../../types/types";
 import { StyledButton, StyledResult, StyledResults } from "./styles";
 
-const Results: React.FC<Props> = ({
+const Results: React.FC<ResultsProps> = ({
   filteredCountries,
   IsCountryLoaded,
   setSelectedCountry,
