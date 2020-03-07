@@ -16,10 +16,17 @@ const App = () => {
   useEffect(() => {
     async function fetchCountriesAPIData() {
       let url = "https://restcountries.eu/rest/v2/all";
-      await axios.get(url).then(response => {
-        setCountries(response.data);
-        setIsCountryLoaded(true);
-      });
+      await axios
+        .get(url)
+        .then(response => {
+          setCountries(response.data);
+          setIsCountryLoaded(true);
+        })
+        .catch(err => {
+          if (err) {
+            console.log(err, "Something went wrong. Please try again.");
+          }
+        });
     }
     fetchCountriesAPIData();
   }, []);
