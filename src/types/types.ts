@@ -4,6 +4,7 @@ export interface CountryStatsProps {
     capital: string;
     flag: string;
     population: number;
+    languages: [{ name: string }];
   };
 }
 
