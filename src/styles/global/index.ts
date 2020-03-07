@@ -48,9 +48,9 @@ h2 {
 }
 
 h4 {
-    font-size: 18px;
+    font-size: 20px;
     @media(min-width: 767px){
-    font-size: 24px;
+    font-size: 28px;
   }
 }
 

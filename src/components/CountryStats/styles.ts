@@ -30,13 +30,13 @@ export const CountryCard = styled.div`
 
     &:first-of-type {
       margin-bottom: 10px;
-      font-size: 20px;
+      font-size: 18px;
     }
 
     @media (min-width: 767px) {
       font-size: 20px;
       &:first-of-type {
-        font-size: 24px;
+        font-size: 22px;
       }
     }
   }
