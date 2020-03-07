@@ -55,7 +55,6 @@ const App = () => {
                 onChange={handleCountryChange}
               ></StyledInput>
             </form>
-
             {filteredCountries.length === 1 ? (
               <CountryStats
                 selectedCountry={filteredCountries[0]}
@@ -73,13 +72,11 @@ const App = () => {
             ) : (
               ""
             )}
-            <section>
-              {!filteredCountries.length && IsCountryLoaded ? (
-                <p>No countries found.</p>
-              ) : (
-                ""
-              )}
-            </section>
+            {!filteredCountries.length && IsCountryLoaded ? (
+              <p>No countries found.</p>
+            ) : (
+              ""
+            )}
           </Container>
         </>
       )}
