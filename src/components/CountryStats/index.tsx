@@ -39,7 +39,7 @@ const CountryStats: React.FC<CountryStatsProps> = ({ selectedCountry }) => {
     <>
       {weather && (
         <CountryCard>
-          <h1>{selectedCountry.name}</h1>
+          <h2>{selectedCountry.name}</h2>
           <img src={selectedCountry.flag} alt="flag"></img>
           <p>
             <strong>Population: </strong>

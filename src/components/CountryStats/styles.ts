@@ -12,7 +12,7 @@ export const CountryCard = styled.div`
     margin: 5px 0;
   }
 
-  h1,
+  h2,
   img {
     align-self: center;
   }

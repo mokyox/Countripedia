@@ -40,6 +40,13 @@ h1 {
   }
 }
 
+h2 {
+  font-size: 40px;
+  @media(min-width: 767px){
+    font-size: 48px
+  }
+}
+
 h4 {
     font-size: 18px;
     @media(min-width: 767px){
@@ -69,7 +76,7 @@ li {
 
 img {
   width: 100%;
-  max-width: 240px;
+  max-width: 200px;
   height: auto;
 }
 `;
