@@ -17,7 +17,7 @@ body {
   color: #f5f5f5;
   font-size: 18px;
   @media(min-width: 767px){
-    font-size: 22px
+    font-size: 22px;
   }
 }
 
@@ -43,14 +43,14 @@ h1 {
 h2 {
   font-size: 40px;
   @media(min-width: 767px){
-    font-size: 48px
+    font-size: 48px;
   }
 }
 
 h4 {
     font-size: 18px;
     @media(min-width: 767px){
-    font-size: 24px
+    font-size: 24px;
   }
 }
 
@@ -67,10 +67,10 @@ p {
 }
 
 li {
-  font-size: 14px;
+  font-size: 16px;
   flex: 1 0 10%;
   @media(min-width: 767px){
-    font-size: 18px
+    font-size: 20px;
   }
 }
 

@@ -22,6 +22,24 @@ export const CountryCard = styled.div`
   h4 {
     margin: 10px 0;
   }
+
+  span {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+
+    &:first-of-type {
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+
+    @media (min-width: 767px) {
+      font-size: 20px;
+      &:first-of-type {
+        font-size: 24px;
+      }
+    }
+  }
 `;
 
 export const WeatherIcon = styled.div`
