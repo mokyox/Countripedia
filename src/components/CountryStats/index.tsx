@@ -51,13 +51,23 @@ const CountryStats: React.FC<CountryStatsProps> = ({ selectedCountry }) => {
               <li key={language.name}>{language.name}</li>
             ))}
           </ul>
-          <h4>Weather in {selectedCountry.capital}</h4>
-          <WeatherIcon className={getIcon(icon)}></WeatherIcon>
-          <span>
-            {description.charAt(0).toUpperCase() + description.slice(1)}
-          </span>
-          <span>Temperature: {Math.floor(temperature)}°C </span>
-          <span>Wind: {Math.floor(wind)} kph</span>
+          {selectedCountry.capital ? (
+            <>
+              <h4>Weather in {selectedCountry.capital}</h4>
+              <WeatherIcon className={getIcon(icon)}></WeatherIcon>
+              <span>
+                {description.charAt(0).toUpperCase() + description.slice(1)}
+              </span>
+              <span>Temperature: {Math.floor(temperature)}°C </span>
+              <span>Wind: {Math.floor(wind)} kph</span>
+            </>
+          ) : (
+            <>
+              <h4>
+                Cannot get current weather at this time. Please try again later.
+              </h4>
+            </>
+          )}
         </CountryCard>
       )}
     </>
