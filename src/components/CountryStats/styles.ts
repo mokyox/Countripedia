@@ -16,6 +16,12 @@ export const CountryCard = styled.div`
   img {
     align-self: center;
   }
+  img {
+    margin: 30px;
+  }
+  h4 {
+    margin: 10px 0;
+  }
 `;
 
 export const WeatherIcon = styled.div`

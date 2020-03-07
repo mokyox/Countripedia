@@ -16,7 +16,7 @@ body {
   background-color: #282c34;
   color: #f5f5f5;
   font-size: 18px;
-  @media(min-width: 768px){
+  @media(min-width: 767px){
     font-size: 22px
   }
 }
@@ -35,12 +35,19 @@ h6 {
 
 h1 {
   font-size: 48px;
-  @media(min-width: 768px){
+  @media(min-width: 767px){
     font-size: 60px
   }
-
 }
 
+h4 {
+    font-size: 18px;
+    @media(min-width: 767px){
+    font-size: 24px
+  }
+}
+
+  
 ul {
   list-style-type: none;
   margin: 0;
@@ -55,10 +62,9 @@ p {
 li {
   font-size: 14px;
   flex: 1 0 10%;
-  @media(min-width: 768px){
-    font-size: 22px
+  @media(min-width: 767px){
+    font-size: 18px
   }
-  
 }
 
 img {
