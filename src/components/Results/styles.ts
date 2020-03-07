@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const StyledResults = styled.div`
-  margin: 0.5 rem auto;
-  max-width: 480px;
+  margin: 0.5rem auto;
+  max-width: 360px;
   text-align: center;
   padding: 1rem;
 `;

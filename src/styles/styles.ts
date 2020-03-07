@@ -12,3 +12,12 @@ export const StyledInput = styled.input`
   margin: 0.75rem auto;
   max-width: 360px;
 `;
+
+export const Container = styled.div`
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;

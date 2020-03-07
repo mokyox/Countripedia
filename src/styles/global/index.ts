@@ -13,7 +13,12 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.6;
-  
+  background-color: #282c34;
+  color: #f5f5f5;
+  font-size: 18px;
+  @media(min-width: 768px){
+    font-size: 22px
+  }
 }
 
 h1,
@@ -23,18 +28,17 @@ h4,
 h5,
 h6 {
   font-family: "Roboto", sans-serif;
-  line-height: 1.2;
+  line-height: 1.1;
+  margin: 0;
+  padding: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  font-size: calc(10px + 2vmin);
-  color: white;
+h1 {
+  font-size: 48px;
+  @media(min-width: 768px){
+    font-size: 60px
+  }
+
 }
 
 ul {
@@ -43,9 +47,18 @@ ul {
   padding: 0;
 }
 
+p {
+  margin: 0;
+  padding: 0;
+}
+
 li {
-  font-size: calc(10px + 1.3vmin);
+  font-size: 14px;
   flex: 1 0 10%;
+  @media(min-width: 768px){
+    font-size: 22px
+  }
+  
 }
 
 img {
