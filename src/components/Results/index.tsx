@@ -16,9 +16,7 @@ const Results: React.FC<ResultsProps> = ({
   if (filteredCountries.length > 10) {
     return <p> Please specify filter further.</p>;
   }
-  if (!filteredCountries.length && IsCountryLoaded) {
-    return <p>No countries found.</p>;
-  }
+
   return (
     <>
       <StyledResults>

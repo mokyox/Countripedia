@@ -45,7 +45,7 @@ const App = () => {
     <>
       <GlobalStyle></GlobalStyle>
       {IsCountryLoaded && (
-        <div className="App">
+        <>
           <Container>
             <h1>Countripedia</h1>
             <form>
@@ -55,23 +55,36 @@ const App = () => {
                 onChange={handleCountryChange}
               ></StyledInput>
             </form>
-            <section className="results">
+            <section>
+              {filteredCountries.length > 1 ? (
+                <Results
+                  setSelectedCountry={setSelectedCountry}
+                  filteredCountries={filteredCountries}
+                  IsCountryLoaded={IsCountryLoaded}
+                  selectedCountry={selectedCountry}
+                ></Results>
+              ) : (
+                ""
+              )}
+            </section>
+            <section>
               {filteredCountries.length === 1 ? (
                 <CountryStats
                   selectedCountry={filteredCountries[0]}
                 ></CountryStats>
-              ) : null}
+              ) : (
+                ""
+              )}
             </section>
-            {filteredCountries.length > 1 ? (
-              <Results
-                setSelectedCountry={setSelectedCountry}
-                filteredCountries={filteredCountries}
-                IsCountryLoaded={IsCountryLoaded}
-                selectedCountry={selectedCountry}
-              ></Results>
-            ) : null}
+            <section>
+              {!filteredCountries.length && IsCountryLoaded ? (
+                <p>No countries found.</p>
+              ) : (
+                ""
+              )}
+            </section>
           </Container>
-        </div>
+        </>
       )}
     </>
   );
