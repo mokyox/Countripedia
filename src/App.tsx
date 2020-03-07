@@ -55,27 +55,24 @@ const App = () => {
                 onChange={handleCountryChange}
               ></StyledInput>
             </form>
-            <section>
-              {filteredCountries.length > 1 ? (
-                <Results
-                  setSelectedCountry={setSelectedCountry}
-                  filteredCountries={filteredCountries}
-                  IsCountryLoaded={IsCountryLoaded}
-                  selectedCountry={selectedCountry}
-                ></Results>
-              ) : (
-                ""
-              )}
-            </section>
-            <section>
-              {filteredCountries.length === 1 ? (
-                <CountryStats
-                  selectedCountry={filteredCountries[0]}
-                ></CountryStats>
-              ) : (
-                ""
-              )}
-            </section>
+
+            {filteredCountries.length === 1 ? (
+              <CountryStats
+                selectedCountry={filteredCountries[0]}
+              ></CountryStats>
+            ) : (
+              ""
+            )}
+            {filteredCountries.length > 1 ? (
+              <Results
+                setSelectedCountry={setSelectedCountry}
+                filteredCountries={filteredCountries}
+                IsCountryLoaded={IsCountryLoaded}
+                selectedCountry={selectedCountry}
+              ></Results>
+            ) : (
+              ""
+            )}
             <section>
               {!filteredCountries.length && IsCountryLoaded ? (
                 <p>No countries found.</p>
