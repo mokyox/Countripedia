@@ -16,9 +16,14 @@ export const CountryCard = styled.div`
   img {
     align-self: center;
   }
+
   img {
-    margin: 30px;
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+    margin: 20px 0;
   }
+
   h4 {
     margin: 10px 0;
   }

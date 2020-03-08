@@ -73,12 +73,6 @@ li {
     font-size: 20px;
   }
 }
-
-img {
-  width: 100%;
-  max-width: 200px;
-  height: auto;
-}
 `;
 
 export default GlobalStyle;
