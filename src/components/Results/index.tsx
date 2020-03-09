@@ -5,7 +5,6 @@ import { StyledButton, StyledResult, StyledResults } from "./styles";
 
 const Results: React.FC<ResultsProps> = ({
   filteredCountries,
-  IsCountryLoaded,
   setSelectedCountry,
   selectedCountry
 }) => {

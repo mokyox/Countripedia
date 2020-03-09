@@ -73,7 +73,6 @@ const App = () => {
               <Results
                 setSelectedCountry={setSelectedCountry}
                 filteredCountries={filteredCountries}
-                IsCountryLoaded={IsCountryLoaded}
                 selectedCountry={selectedCountry}
               ></Results>
             ) : (
