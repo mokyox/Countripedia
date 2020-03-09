@@ -34,16 +34,16 @@ h6 {
 }
 
 h1 {
-  font-size: 48px;
+  font-size: 40px;
   @media(min-width: 767px){
-    font-size: 60px
+    font-size: 54px
   }
 }
 
 h2 {
-  font-size: 40px;
+  font-size: 32px;
   @media(min-width: 767px){
-    font-size: 48px;
+    font-size: 40px;
   }
 }
 

@@ -10,6 +10,7 @@ const Results: React.FC<ResultsProps> = ({
 }) => {
   const [isClicked, setIsClicked] = useState(false);
 
+  //Return a maximum of 10 results
   if (filteredCountries.length > 10) {
     return <p> Please specify filter further.</p>;
   }
