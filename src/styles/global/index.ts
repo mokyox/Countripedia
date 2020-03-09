@@ -36,7 +36,7 @@ h6 {
 h1 {
   font-size: 40px;
   @media(min-width: 767px){
-    font-size: 54px
+    font-size: 54px;
   }
 }
 
