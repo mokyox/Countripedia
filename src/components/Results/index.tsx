@@ -10,15 +10,13 @@ const Results: React.FC<ResultsProps> = ({
 }) => {
   const [isClicked, setIsClicked] = useState(false);
 
-  //Get API weather data after country API data from parent component is called
-
   if (filteredCountries.length > 10) {
     return <p> Please specify filter further.</p>;
   }
 
   return (
     <>
-      <StyledResults>
+      <StyledResults data-testid="results">
         <ul>
           {filteredCountries.map(country => (
             <React.Fragment key={country.name}>
