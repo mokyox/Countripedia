@@ -9,7 +9,6 @@ export interface CountryStatsProps {
 }
 
 export interface ResultsProps extends CountryStatsProps {
-  filteredCountries: [{ name: string }];
-  IsCountryLoaded: boolean;
+  filteredCountries: { name: string }[];
   setSelectedCountry: React.Dispatch<React.SetStateAction<{ name: string }>>;
 }
