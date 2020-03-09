@@ -17,7 +17,15 @@ const selectedCountry = {
   languages: [{ name: "Swedish" }]
 };
 
-const setSelectedCountry = {}; //How can we mock a setState function?
+const setSelectedCountry = jest.fn();
+const useStateSpy = jest.spyOn(React, "useState");
+useStateSpy.mockImplementation(selectedCountry => [
+  selectedCountry,
+  setSelectedCountry
+]);
+
+//TODO: Fix TS error
+//ype 'any[]' is missing the following properties from type '[unknown, Dispatch<unknown>]': 0, 1ts(2739)
 
 describe("<Results />", () => {
   it("renders a <Results /> component", () => {
