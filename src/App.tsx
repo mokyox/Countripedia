@@ -1,7 +1,8 @@
 // @ts-nocheck
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import { StyledInput, StyledLabel, Container } from "./styles/styles";
+import { handleSubmit } from "./utils";
+import axios from "axios";
 import Results from "./components/Results/";
 import CountryStats from "./components/CountryStats/";
 import GlobalStyle from "./styles/global/index";
@@ -18,11 +19,11 @@ const App = () => {
       let url = "https://restcountries.eu/rest/v2/all";
       await axios
         .get(url)
-        .then(response => {
+        .then((response) => {
           setCountries(response.data);
           setIsCountryLoaded(true);
         })
-        .catch(err => {
+        .catch((err) => {
           if (err) {
             console.log(err, "Something went wrong. Please try again.");
           }
@@ -36,7 +37,7 @@ const App = () => {
     searchCountry === ""
       ? countries
       : countries.filter(
-          country =>
+          (country) =>
             country.name.toLowerCase().indexOf(searchCountry.toLowerCase()) !==
             -1
         );
@@ -50,22 +51,20 @@ const App = () => {
 
   return (
     <>
-      <GlobalStyle></GlobalStyle>
+      <GlobalStyle />
       {IsCountryLoaded && (
         <>
           <Container>
             <h1>Countripedia</h1>
-            <form>
+            <form onSubmit={handleSubmit}>
               <StyledLabel>Search Countries</StyledLabel>
               <StyledInput
                 value={searchCountry}
                 onChange={handleCountryChange}
-              ></StyledInput>
+              />
             </form>
             {filteredCountries.length === 1 ? (
-              <CountryStats
-                selectedCountry={filteredCountries[0]}
-              ></CountryStats>
+              <CountryStats selectedCountry={filteredCountries[0]} />
             ) : (
               ""
             )}
@@ -74,7 +73,7 @@ const App = () => {
                 setSelectedCountry={setSelectedCountry}
                 filteredCountries={filteredCountries}
                 selectedCountry={selectedCountry}
-              ></Results>
+              />
             ) : (
               ""
             )}
