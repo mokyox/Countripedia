@@ -25,7 +25,7 @@ const getIcon = (weatherIcon: string) => {
     "10n": "wi wi-night-rain",
     "11n": "wi wi-night-thunderstorm",
     "13n": "wi wi-night-snow",
-    "50n": "wi wi-night-fog"
+    "50n": "wi wi-night-fog",
   };
   if (hasKey(iconsMap, weatherIcon)) {
     return iconsMap[weatherIcon];

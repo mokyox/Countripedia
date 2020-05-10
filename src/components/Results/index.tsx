@@ -6,7 +6,7 @@ import { StyledButton, StyledResult, StyledResults } from "./styles";
 const Results: React.FC<ResultsProps> = ({
   filteredCountries,
   setSelectedCountry,
-  selectedCountry
+  selectedCountry,
 }) => {
   const [isClicked, setIsClicked] = useState(false);
 
@@ -19,7 +19,7 @@ const Results: React.FC<ResultsProps> = ({
     <>
       <StyledResults data-testid="results">
         <ul>
-          {filteredCountries.map(country => (
+          {filteredCountries.map((country) => (
             <React.Fragment key={country.name}>
               <StyledResult>
                 <li>{country.name}</li>
@@ -37,7 +37,7 @@ const Results: React.FC<ResultsProps> = ({
         </ul>
       </StyledResults>
       {selectedCountry ? (
-        <CountryStats selectedCountry={selectedCountry}></CountryStats>
+        <CountryStats selectedCountry={selectedCountry} />
       ) : (
         ""
       )}
