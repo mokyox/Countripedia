@@ -36,6 +36,6 @@ describe("<Results />", () => {
         setSelectedCountry={setSelectedCountry}
       />
     );
-    expect(getByTestId("results")).toBeTruthy();
+    expect(getByTestId("results")).toMatchSnapshot();
   });
 });

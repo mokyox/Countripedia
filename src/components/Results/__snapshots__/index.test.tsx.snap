@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Results /> renders a <Results /> component 1`] = `
+<div
+  class="sc-AxiKw jMHJWW"
+  data-testid="results"
+>
+  <ul>
+    <div
+      class="sc-AxhCb eDqXhQ"
+    >
+      <li>
+        Azerbaijan
+      </li>
+      <button
+        class="sc-AxhUy cuekrc"
+      >
+        Display
+      </button>
+    </div>
+    <div
+      class="sc-AxhCb eDqXhQ"
+    >
+      <li>
+        Jamaica
+      </li>
+      <button
+        class="sc-AxhUy cuekrc"
+      >
+        Display
+      </button>
+    </div>
+    <div
+      class="sc-AxhCb eDqXhQ"
+    >
+      <li>
+        Japan
+      </li>
+      <button
+        class="sc-AxhUy cuekrc"
+      >
+        Display
+      </button>
+    </div>
+    <div
+      class="sc-AxhCb eDqXhQ"
+    >
+      <li>
+        Svalbard and Jan Mayen
+      </li>
+      <button
+        class="sc-AxhUy cuekrc"
+      >
+        Display
+      </button>
+    </div>
+  </ul>
+</div>
+`;
